@@ -1,0 +1,34 @@
+.m-header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 1rem 1.5rem;
+    height: 4.5rem;
+    width: 100%;
+    max-width: 136.6rem;
+    background-color: transparent;
+    z-index: 20;
+
+    @include respond(desktop-m) {
+        display: none;
+    }
+
+    &__sticky {
+        background-color: $color--white;
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
+
+    &__menu {
+        margin-right: 1.5rem;
+    }
+
+    &__search {
+        margin-left: 1.5rem;
+    }
+}

@@ -1,0 +1,63 @@
+// Responsive Breakpoints
+$bp-largest: 110em;          // 1760px
+$bp-large: 64em;          // 1024px
+$bp-medium: 52em;           // 832px
+$bp-small: 37.5em;          // 600px
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $color--secondary;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 62.5%;           // 10px/16px = 62.5% -> 1rem = 10px
+
+    @include respond(phone-xs) {
+        font-size: 53.125%;     // 8.5px/16px = 53.125% -> 1rem = 8.5px
+    }
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+::selection {
+    background-color: $color--primary;
+    color: $color--white;
+}
+
+.page {
+    position: relative;
+    margin: 0 auto;
+    // max-width: 102.4rem;    // iPad Pro
+    height: 100%;
+}
