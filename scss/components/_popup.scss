@@ -1,5 +1,6 @@
 .leaflet-popup-content {
     margin: 2rem;
+    line-height: 1.5;
 
     p {
         margin: 0;
@@ -12,16 +13,23 @@
 
 .pharmacy {
     &__name {
-        // margin-bottom: .8rem;
-        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-left: .5rem solid $color--primary;
+        padding-left: 1rem;
+        font-size: 2.2rem;
         font-weight: 400;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.6rem;
+        font-weight: 300;
     }
 
     &__address,
     &__phone {
-        margin: 1rem 0 !important;
-        font-size: 1.2rem;
-        font-weight: 300;
+        margin-bottom: 1rem;
         text-decoration: underline;
     }
 }
@@ -45,8 +53,8 @@
     &__child {
         border-radius: .8rem;
         padding: 1rem 1.6rem;
-        background-color: #444;
+        background-color: $color--primary;
         color: #fff;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 }

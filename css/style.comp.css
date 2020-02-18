@@ -50,7 +50,7 @@ ul {
   list-style: none; }
 
 ::selection {
-  background-color: #E60012;
+  background-color: #45566d;
   color: #fff; }
 
 html {
@@ -73,32 +73,6 @@ h3 {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 25; }
 
-.divider__line {
-  width: 100%;
-  height: 1px;
-  background-color: #6A6C71; }
-
-.divider__text {
-  position: relative;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  background-color: inherit; }
-  .divider__text::before {
-    content: "";
-    position: absolute;
-    left: 5%;
-    top: 1.2rem;
-    width: 90%;
-    border-top: 1px solid #000; }
-  .divider__text--title {
-    position: relative;
-    display: inline-block;
-    padding: 0 1.5rem;
-    font-size: 1.5rem;
-    font-weight: normal;
-    background-color: inherit;
-    z-index: 2; }
-
 .btn, .btn:link, .btn:active, .btn:visited {
   outline: none;
   border: none;
@@ -110,22 +84,15 @@ h3 {
 
 .btn--primary {
   height: 5rem;
-  background-color: #E60012;
+  background-color: #45566d;
   color: #fff !important;
   font-size: 1.6rem;
   line-height: 1;
   border-radius: 0; }
 
-.btn--secondary {
-  height: 5rem;
-  background-color: #1C1D20;
-  color: #fff !important;
-  font-size: 1.6rem; }
-  .btn--secondary:hover {
-    filter: brightness(1.5); }
-
 .leaflet-popup-content {
-  margin: 2rem; }
+  margin: 2rem;
+  line-height: 1.5; }
   .leaflet-popup-content p {
     margin: 0; }
 
@@ -133,13 +100,20 @@ h3 {
   display: none; }
 
 .pharmacy__name {
-  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 0.5rem solid #45566d;
+  padding-left: 1rem;
+  font-size: 2.2rem;
   font-weight: 400; }
 
+.pharmacy__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 300; }
+
 .pharmacy__address, .pharmacy__phone {
-  margin: 1rem 0 !important;
-  font-size: 1.2rem;
-  font-weight: 300;
+  margin-bottom: 1rem;
   text-decoration: underline; }
 
 .mask__container {
@@ -156,9 +130,9 @@ h3 {
 .mask__adult, .mask__child {
   border-radius: .8rem;
   padding: 1rem 1.6rem;
-  background-color: #444;
+  background-color: #45566d;
   color: #fff;
-  font-size: 1.4rem; }
+  font-size: 1.6rem; }
 
 .footer {
   display: block; }

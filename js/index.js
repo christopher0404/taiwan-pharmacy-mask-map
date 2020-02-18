@@ -55,8 +55,10 @@ xhr.onload = function() {
 			], {icon: mask})
 			.bindPopup( 
                 '<h3 class="pharmacy__name">' + data[i].properties.name + '</h3>' + 
-                '<a href="tel:' + data[i].properties.phone + '" ' + ' class="pharmacy__phone">' + data[i].properties.phone + '</a>' + 
-                '<p class="pharmacy__address">' + data[i].properties.address + '</p>' + 
+                '<div class="pharmacy__info">' + 
+                    '<a href="tel:' + data[i].properties.phone + '" ' + ' class="pharmacy__phone">' + data[i].properties.phone + '</a>' + 
+                    '<a href="https://www.google.com.tw/maps/search/' + data[i].properties.address + '" ' + ' target="_blank" class="pharmacy__address">' + data[i].properties.address + '</a>' + 
+                '</div>' + 
                 '<div class="mask__container">' + 
                     '<p class="mask__adult">成人口罩 ' + data[i].properties.mask_adult + '</p>' + 
                     '<p class="mask__child">兒童口罩 ' + data[i].properties.mask_child + '</p>' + 

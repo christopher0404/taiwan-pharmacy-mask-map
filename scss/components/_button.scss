@@ -14,20 +14,20 @@
     &--primary {
         height: 5rem;
         background-color: $color--primary;
-        color: $color--white !important;
+        color: #fff !important;
         font-size: 1.6rem;
         line-height: 1;
         border-radius: 0;
     }
 
-    &--secondary {
-        height: 5rem;
-        background-color: $color--secondary;
-        color: $color--white !important;
-        font-size: 1.6rem;
+    // &--secondary {
+    //     height: 5rem;
+    //     background-color: $color--secondary;
+    //     color: #fff !important;
+    //     font-size: 1.6rem;
 
-        &:hover {
-            filter: brightness(1.5);
-        }
-    }
+    //     &:hover {
+    //         filter: brightness(1.5);
+    //     }
+    // }
 }
