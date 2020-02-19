@@ -9,7 +9,7 @@ window.onload = function() {
     var map = L.map('map', {
         // center: [25.052362, 121.520685],
         layers: MQ.mapLayer(),
-        zoom: 16
+        zoom: 17
     });
 
     function geolocationErrorOccurred(geolocationSupported, popup, latLng) {
