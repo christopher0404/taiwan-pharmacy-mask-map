@@ -6,18 +6,31 @@ window.onload = function() {
     //     zoom: 12
     // });
 
-    var map = L.map('map', {
+    // L.mapquest.key = 'xbC1ee3904qPCSmJzBKZ0TuA39aBKbed';
+
+    var maskMap = L.map('map', {
         // center: [25.052362, 121.520685],
-        layers: MQ.mapLayer(),
+        // layers: MQ.mapLayer(),
+        // layers: L.mapquest.tileLayer('map'),
         zoom: 17
     });
+
+    // L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+    // var maskMap = L.mapquest.map('map', {
+    //   center: [37.7749, -122.4194],
+    //   layers: L.mapquest.tileLayer('dark'),
+    //   zoom: 12
+    // });
+
+    // maskMap.addControl(L.mapquest.control());
 
     function geolocationErrorOccurred(geolocationSupported, popup, latLng) {
         popup.setLatLng(latLng);
         popup.setContent(geolocationSupported ?
                 '<b>Error:</b> The Geolocation service failed.' :
                 '<b>Error:</b> This browser doesn\'t support geolocation.');
-        popup.openOn(map);
+        popup.openOn(maskMap);
     }
 
     if (navigator.geolocation) {
@@ -29,18 +42,20 @@ window.onload = function() {
 
             // popup.setLatLng(latLng);
             // popup.setContent('This is your current location');
-            // popup.openOn(map);
+            // popup.openOn(maskMap);
 
-            map.setView(latLng);
+            maskMap.setView(latLng);
         }, function() {
-            geolocationErrorOccurred(true, popup, map.getCenter());
+            geolocationErrorOccurred(true, popup, maskMap.getCenter());
         });
     } else {
         //No browser support geolocation service
-        geolocationErrorOccurred(false, popup, map.getCenter());
+        geolocationErrorOccurred(false, popup, maskMap.getCenter());
     }
 
-    L.tileLayer('https://maps.omniscale.net/v2/private-johnny-chu-9fee754f/style.grayscale/map').addTo(map);
+    // L.tileLayer('https://maps.omniscale.net/v2/private-johnny-chu-9fee754f/style.grayscale/map').addTo(maskMap);
+
+    L.tileLayer('https://maps.omniscale.net/v2/mask-map-8b9d9826/style.grayscale/{z}/{x}/{y}.png', {crossOrigin: 'true'}).addTo(maskMap);
     
     var greenIcon = new L.Icon({
         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -60,7 +75,7 @@ window.onload = function() {
         shadowSize: [41, 41]
     });
     
-    var markers = new L.MarkerClusterGroup().addTo(map);;
+    var markers = new L.MarkerClusterGroup().addTo(maskMap);;
     
     var xhr = new XMLHttpRequest();
     xhr.open("get", "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json");
@@ -96,7 +111,7 @@ window.onload = function() {
                 )
             );
         }
-        map.addLayer(markers);
+        maskMap.addLayer(markers);
     }
 }
 

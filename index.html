@@ -14,11 +14,10 @@
     <meta name="keywords" content="口罩, 藥局, 口罩地圖, 藥局地圖, 口罩庫存查詢, 新型冠狀病毒,武漢肺炎, pharmacy, mask, map, COVID-19, 2019-nCov">
     <meta name="description" content="每 1 分鐘更新一次資訊，數量以藥局實際存量為主，線上查詢僅供參考。口罩使用三時機：「1. 看病、陪病、探病的時候要戴，2. 有呼吸道症狀者應戴口罩，3. 有慢性病者外出建議戴口罩」，身體健康者從事戶外活動、搭乘通氣量足夠的大眾運輸時，不需要戴口罩，請把口罩留給真正需要的人（如有慢性病者、有呼吸道症狀者）與醫療、防疫人員，才能讓防疫發揮最大效用。">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"></link>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"></link>
+    <!-- <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/> -->
 
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700|Noto+Sans+TC:300,400,700&display=swap&subset=chinese-traditional,latin-ext" rel="stylesheet">
 
@@ -27,11 +26,10 @@
     <link rel="stylesheet" href="css/style.prefix.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=xbC1ee3904qPCSmJzBKZ0TuA39aBKbed"></script>
+    <!-- <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script> -->
+    <!-- <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=xbC1ee3904qPCSmJzBKZ0TuA39aBKbed"></script> -->
 
     <script src="js/index.js" defer></script>
 </head>
@@ -39,6 +37,10 @@
 <body>
 
     <div id="map"></div>
+    
+    <footer class="footer">
+        <div class="footer__copyright">© 2020 Christopher 朱郡廷</div>
+    </footer>
 
 </body>
 </html>
