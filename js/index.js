@@ -76,7 +76,7 @@ window.onload = function() {
     });
 */
     var maskIcon = new L.Icon({
-        iconUrl: '../img/faceMask.png',
+        iconUrl: 'https://github.com/christopher0404/taiwan-pharmacy-mask-map/blob/master/img/faceMask.png',
         // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [32, 32],
         // iconAnchor: [12, 41],
@@ -85,7 +85,7 @@ window.onload = function() {
     });
 
     var maskIconGray = new L.Icon({
-        iconUrl: '../img/faceMask-gray.png',
+        iconUrl: 'https://github.com/christopher0404/taiwan-pharmacy-mask-map/blob/master/img/faceMask-gray.png',
         // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [32, 32],
         // iconAnchor: [12, 41],
