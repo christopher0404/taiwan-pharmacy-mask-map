@@ -12,7 +12,7 @@ window.onload = function() {
         // center: [25.052362, 121.520685],
         // layers: MQ.mapLayer(),
         // layers: L.mapquest.tileLayer('map'),
-        zoom: 17
+        zoom: 16
     });
 
     // L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
@@ -56,7 +56,7 @@ window.onload = function() {
     // L.tileLayer('https://maps.omniscale.net/v2/private-johnny-chu-9fee754f/style.grayscale/map').addTo(maskMap);
 
     L.tileLayer('https://maps.omniscale.net/v2/mask-map-8b9d9826/style.grayscale/{z}/{x}/{y}.png', {crossOrigin: 'true'}).addTo(maskMap);
-    
+/*
     var greenIcon = new L.Icon({
         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -74,7 +74,25 @@ window.onload = function() {
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
-    
+*/
+    var maskIcon = new L.Icon({
+        iconUrl: '../img/faceMask.png',
+        // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [32, 32],
+        // iconAnchor: [12, 41],
+        // popupAnchor: [1, -34],
+        // shadowSize: [41, 41]
+    });
+
+    var maskIconGray = new L.Icon({
+        iconUrl: '../img/faceMask-gray.png',
+        // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [32, 32],
+        // iconAnchor: [12, 41],
+        // popupAnchor: [1, -34],
+        // shadowSize: [41, 41]
+    });
+
     var markers = new L.MarkerClusterGroup().addTo(maskMap);;
     
     var xhr = new XMLHttpRequest();
@@ -88,9 +106,9 @@ window.onload = function() {
             var mask;
             
             if ( data[i].properties.mask_adult == 0 ) {
-                mask = redIcon;
+                mask = maskIconGray;
             } else {
-                mask = greenIcon;
+                mask = maskIcon;
             }
             
             markers.addLayer( 
@@ -99,14 +117,16 @@ window.onload = function() {
                     data[i].geometry.coordinates[0]
                 ], {icon: mask})
                 .bindPopup( 
-                    '<h3 class="pharmacy__name">' + data[i].properties.name + '</h3>' + 
+                    `<a href="https://www.google.com.tw/maps/search/${data[i].properties.name}" target="_blank">
+                        <h3 class="pharmacy__name"> ${data[i].properties.name} </h3>
+                    </a>` + 
                     '<div class="pharmacy__info">' + 
                         '<a href="tel:' + data[i].properties.phone + '" ' + ' class="pharmacy__phone">' + data[i].properties.phone + '</a>' + 
                         '<a href="https://www.google.com.tw/maps/search/' + data[i].properties.address + '" ' + ' target="_blank" class="pharmacy__address">' + data[i].properties.address + '</a>' + 
                     '</div>' + 
                     '<div class="mask__container">' + 
                         '<p class="mask__adult">成人口罩 ' + data[i].properties.mask_adult + '</p>' + 
-                        '<p class="mask__child">兒童口罩 ' + data[i].properties.mask_child + '</p>' + 
+                        '<p class="mask__child">孩童口罩 ' + data[i].properties.mask_child + '</p>' + 
                     '</div>' 
                 )
             );
@@ -114,6 +134,8 @@ window.onload = function() {
         maskMap.addLayer(markers);
     }
 }
+
+{/* <a href="https://www.google.com/maps/dir/25.0032999,121.5540404/25.063669,121.521567" class="customPopup__google" target="_blank"></a> */}
 
 // initialize the map on the "map" div with a given center and zoom
 // var map = L.map('map', {
