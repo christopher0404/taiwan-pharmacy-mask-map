@@ -5,46 +5,40 @@
 
 .marker {
     &-cluster {
-        background-clip: padding-box;
-        border-radius: 20px;
+        border-radius: 5rem;
+        // background-clip: padding-box;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 700;
 
-        div {
-            width: 30px;
-            height: 30px;
-            margin-left: 5px;
-            margin-top: 5px;
-        
-            text-align: center;
-            border-radius: 15px;
-            font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
-        }
-
-        span {
-            line-height: 30px;
+        &-small, &-medium, &-large {
+            background-color: rgba($color-blue-deep, .6);
+            color: #fff;
         }
 
         &-small {
-            background-color: rgba(181, 226, 140, 0.6);
-
-            div {
-                background-color: rgba(110, 204, 57, 0.6);
-            }
+            // background-color: rgba(181, 226, 140, 0.6);
+            width: 3rem !important;
+            height: 3rem !important;
+            line-height: 3rem !important;
         }
 
         &-medium {
-            background-color: rgba(241, 211, 87, 0.6);
-
-            div {
-                background-color: rgba(240, 194, 12, 0.6);
-            }
+            // background-color: rgba(241, 211, 87, 0.6);
+            width: 4rem !important;
+            height: 4rem !important;
+            line-height: 4rem !important;
         }
 
         &-large {
-            background-color: rgba(253, 156, 115, 0.6);
-
-            div {
-                background-color: rgba(241, 128, 23, 0.6);
-            }
+            // background-color: rgba(253, 156, 115, 0.6);
+            width: 5rem !important;
+            height: 5rem !important;
+            line-height: 5rem !important;
         }
     }
+}
+
+.leaflet-marker-icon {
+    z-index: 100 !important;
 }

@@ -12,7 +12,7 @@ a:link,
 a:hover,
 a:active,
 a:visited {
-    // text-decoration: none;
+    text-decoration: none;
     color: inherit;
 }
 
@@ -33,6 +33,6 @@ ul {
 }
 
 ::selection {
-    background-color: $color--primary;
+    background-color: $color-blue-dark;
     color: #fff;
 }

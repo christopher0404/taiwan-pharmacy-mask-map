@@ -76,21 +76,17 @@ window.onload = function() {
     });
 */
     var maskIcon = new L.Icon({
-        iconUrl: 'https://github.com/christopher0404/taiwan-pharmacy-mask-map/blob/master/img/faceMask.png',
-        // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [32, 32],
-        // iconAnchor: [12, 41],
-        // popupAnchor: [1, -34],
-        // shadowSize: [41, 41]
+        iconUrl: './img/faceMask.png',
+        iconSize: [80, 80],
+        // iconAnchor: [40, 15],
+        popupAnchor: [0, -20]
     });
 
     var maskIconGray = new L.Icon({
-        iconUrl: 'https://github.com/christopher0404/taiwan-pharmacy-mask-map/blob/master/img/faceMask-gray.png',
-        // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [32, 32],
-        // iconAnchor: [12, 41],
-        // popupAnchor: [1, -34],
-        // shadowSize: [41, 41]
+        iconUrl: './img/faceMask-gray.png',
+        iconSize: [80, 80],
+        // iconAnchor: [40, 15],
+        popupAnchor: [0, -20]
     });
 
     var markers = new L.MarkerClusterGroup().addTo(maskMap);;
@@ -102,7 +98,7 @@ window.onload = function() {
     xhr.onload = function() {
         var data = JSON.parse(xhr.responseText).features
      
-        for( let i = 0; data.length > i; i++ ) {
+        for( let i = 0; i < data.length; i++ ) {
             var mask;
             
             if ( data[i].properties.mask_adult == 0 ) {
@@ -117,17 +113,24 @@ window.onload = function() {
                     data[i].geometry.coordinates[0]
                 ], {icon: mask})
                 .bindPopup( 
-                    `<a href="https://www.google.com.tw/maps/search/${data[i].properties.name}" target="_blank">
+                    `<a href="https://www.google.com.tw/maps/search/${data[i].properties.name}" target="_blank" rel="noopener noreferrer">
                         <h3 class="pharmacy__name"> ${data[i].properties.name} </h3>
-                    </a>` + 
-                    '<div class="pharmacy__info">' + 
-                        '<a href="tel:' + data[i].properties.phone + '" ' + ' class="pharmacy__phone">' + data[i].properties.phone + '</a>' + 
-                        '<a href="https://www.google.com.tw/maps/search/' + data[i].properties.address + '" ' + ' target="_blank" class="pharmacy__address">' + data[i].properties.address + '</a>' + 
-                    '</div>' + 
-                    '<div class="mask__container">' + 
-                        '<p class="mask__adult">成人口罩 ' + data[i].properties.mask_adult + '</p>' + 
-                        '<p class="mask__child">孩童口罩 ' + data[i].properties.mask_child + '</p>' + 
-                    '</div>' 
+                    </a>
+                    
+                    <div class="pharmacy__info">
+                        <a href="tel: ${data[i].properties.phone}" target="_blank" rel="noopener noreferrer" class="pharmacy__phone"> 
+                            ${data[i].properties.phone} 
+                        </a>
+                        
+                        <a href="https://www.google.com.tw/maps/search/${data[i].properties.address}" target="_blank" rel="noopener noreferrer" class="pharmacy__address">
+                            ${data[i].properties.address}
+                        </a>
+                    </div>
+                    
+                    <div class="mask__container">
+                        <p class="mask__adult">成人口罩 ${data[i].properties.mask_adult} </p>
+                        <p class="mask__child">孩童口罩 ${data[i].properties.mask_child} </p>
+                    </div>`
                 )
             );
         }

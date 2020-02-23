@@ -1,8 +1,3 @@
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -33,6 +28,7 @@ a:link,
 a:hover,
 a:active,
 a:visited {
+  text-decoration: none;
   color: inherit; }
 
 html,
@@ -50,7 +46,7 @@ ul {
   list-style: none; }
 
 ::selection {
-  background-color: #45566d;
+  background-color: #4a6272;
   color: #fff; }
 
 html {
@@ -60,35 +56,11 @@ html {
     html {
       font-size: 53.125%; } }
 
+.leaflet-container {
+  font-family: 'Maven Pro', 'Noto Sans TC', sans-serif; }
+
 h3 {
   margin: 0; }
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 25; }
-
-.btn, .btn:link, .btn:active, .btn:visited {
-  outline: none;
-  border: none;
-  padding: 1.3rem 0;
-  text-align: center;
-  text-decoration: none;
-  transition: all .5s;
-  cursor: pointer; }
-
-.btn--primary {
-  height: 5rem;
-  background-color: #45566d;
-  color: #fff !important;
-  font-size: 1.6rem;
-  line-height: 1;
-  border-radius: 0; }
 
 .leaflet-popup-content {
   margin: 2rem;
@@ -101,8 +73,9 @@ h3 {
 
 .pharmacy__name {
   margin-bottom: 1rem;
-  border-left: 0.5rem solid #45566d;
+  border-left: 0.5rem solid #7498b2;
   padding-left: 1rem;
+  color: #638299;
   font-size: 2.2rem;
   font-weight: 400; }
 
@@ -112,9 +85,27 @@ h3 {
   font-size: 1.6rem;
   font-weight: 300; }
 
-.pharmacy__address, .pharmacy__phone {
+.pharmacy__phone, .pharmacy__address {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
-  text-decoration: underline; }
+  text-decoration: underline !important; }
+  .pharmacy__phone::before, .pharmacy__address::before {
+    content: '';
+    display: inline-block;
+    background-size: cover; }
+
+.pharmacy__phone::before {
+  background-image: url(../../img/icon-phone.png);
+  margin-right: .8rem;
+  width: 2rem;
+  height: 2rem; }
+
+.pharmacy__address::before {
+  background-image: url(../../img/icon-marker.png);
+  margin-right: .6rem;
+  width: 2.2rem;
+  height: 2.2rem; }
 
 .mask__container {
   display: flex;
@@ -122,15 +113,16 @@ h3 {
 
 .mask__adult {
   margin-right: 1rem !important;
+  background-color: #7fa7c4;
   font-weight: 300; }
 
 .mask__child {
+  background-color: #74b29d;
   font-weight: 300; }
 
 .mask__adult, .mask__child {
   border-radius: .8rem;
   padding: 1rem 1.6rem;
-  background-color: #45566d;
   color: #fff;
   font-size: 1.6rem; }
 
@@ -148,40 +140,39 @@ h3 {
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: rgba(68, 68, 68, 0.5);
+    background-color: rgba(49, 65, 76, 0.5);
     color: #fff;
     font-size: 1.4rem;
-    font-weight: 300; }
-
-.header {
-  display: block; }
+    font-weight: 300;
+    transition: all .5s ease; }
+    .footer__copyright:hover {
+      background-color: rgba(49, 65, 76, 0.8);
+      font-size: 1.6rem; }
 
 #map {
   width: 100%;
   height: 100%; }
 
 .marker-cluster {
-  background-clip: padding-box;
-  border-radius: 20px; }
-  .marker-cluster div {
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
-    margin-top: 5px;
-    text-align: center;
-    border-radius: 15px;
-    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif; }
-  .marker-cluster span {
-    line-height: 30px; }
+  border-radius: 5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700; }
+  .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+    background-color: rgba(49, 65, 76, 0.6);
+    color: #fff; }
   .marker-cluster-small {
-    background-color: rgba(181, 226, 140, 0.6); }
-    .marker-cluster-small div {
-      background-color: rgba(110, 204, 57, 0.6); }
+    width: 3rem !important;
+    height: 3rem !important;
+    line-height: 3rem !important; }
   .marker-cluster-medium {
-    background-color: rgba(241, 211, 87, 0.6); }
-    .marker-cluster-medium div {
-      background-color: rgba(240, 194, 12, 0.6); }
+    width: 4rem !important;
+    height: 4rem !important;
+    line-height: 4rem !important; }
   .marker-cluster-large {
-    background-color: rgba(253, 156, 115, 0.6); }
-    .marker-cluster-large div {
-      background-color: rgba(241, 128, 23, 0.6); }
+    width: 5rem !important;
+    height: 5rem !important;
+    line-height: 5rem !important; }
+
+.leaflet-marker-icon {
+  z-index: 100 !important; }
