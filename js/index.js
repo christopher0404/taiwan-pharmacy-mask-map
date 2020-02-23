@@ -44,6 +44,16 @@ window.onload = function() {
             // popup.setContent('This is your current location');
             // popup.openOn(maskMap);
 
+            var yourLocation = L.divIcon({
+                className: 'yourLocation',
+                // html: "<div></div>",
+                iconSize: [25, 25]
+            });
+
+            L.marker(latLng, {
+                icon: yourLocation
+            }).addTo(maskMap);
+
             maskMap.setView(latLng);
         }, function() {
             geolocationErrorOccurred(true, popup, maskMap.getCenter());

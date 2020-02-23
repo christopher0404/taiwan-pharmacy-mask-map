@@ -179,3 +179,27 @@ h3 {
 
 .leaflet-marker-icon {
   z-index: 100 !important; }
+
+@keyframes radar {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(2);
+    opacity: 0; } }
+
+.yourLocation {
+  position: relative;
+  border-radius: 50%;
+  background-color: #b26b6b; }
+  .yourLocation::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -.5rem;
+    top: -.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: rgba(178, 107, 107, 0.6);
+    animation: radar 1.5s linear infinite; }
