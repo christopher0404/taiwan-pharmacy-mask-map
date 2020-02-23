@@ -128,13 +128,16 @@ h3 {
 
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: 1.6rem;
   display: flex !important;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: transparent;
-  z-index: 1000; }
+  z-index: 700; }
+  @media only screen and (min-width: 48em) {
+    .footer {
+      bottom: 0; } }
   .footer__copyright {
     display: flex;
     justify-content: center;

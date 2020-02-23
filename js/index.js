@@ -55,7 +55,14 @@ window.onload = function() {
 
     // L.tileLayer('https://maps.omniscale.net/v2/private-johnny-chu-9fee754f/style.grayscale/map').addTo(maskMap);
 
-    L.tileLayer('https://maps.omniscale.net/v2/mask-map-8b9d9826/style.grayscale/{z}/{x}/{y}.png', {crossOrigin: 'true'}).addTo(maskMap);
+    var host = 'https://maps.omniscale.net/v2/mask-map-8b9d9826/style.grayscale/{z}/{x}/{y}.png';
+
+    var attribution = '&copy; 2020 &middot; <a href="https://maps.omniscale.com/">Omniscale</a> ' + '&middot; Map data: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+
+    L.tileLayer(host, {
+        crossOrigin: 'true',
+        attribution: attribution
+    }).addTo(maskMap);
 /*
     var greenIcon = new L.Icon({
         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -121,7 +128,7 @@ window.onload = function() {
                         <a href="tel: ${data[i].properties.phone}" target="_blank" rel="noopener noreferrer" class="pharmacy__phone"> 
                             ${data[i].properties.phone} 
                         </a>
-                        
+
                         <a href="https://www.google.com.tw/maps/search/${data[i].properties.address}" target="_blank" rel="noopener noreferrer" class="pharmacy__address">
                             ${data[i].properties.address}
                         </a>
