@@ -59,6 +59,19 @@
             height: 2.2rem;
         }
     }
+
+    &__note {
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        width: 100%;
+        max-width: 28rem;
+        background-color: rgba(#999999, .1);
+        color: #666666;
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
 }
 
 .mask {

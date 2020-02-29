@@ -129,8 +129,8 @@ window.onload = function() {
                     data[i].geometry.coordinates[1], 
                     data[i].geometry.coordinates[0]
                 ], {icon: mask})
-                .bindPopup( 
-                    `<a href="https://www.google.com.tw/maps/search/${data[i].properties.name}" target="_blank" rel="noopener noreferrer">
+                .bindPopup(`
+                    <a href="https://www.google.com.tw/maps/search/${data[i].properties.name}" target="_blank" rel="noopener noreferrer">
                         <h3 class="pharmacy__name"> ${data[i].properties.name} </h3>
                     </a>
                     
@@ -142,20 +142,24 @@ window.onload = function() {
                         <a href="https://www.google.com.tw/maps/search/${data[i].properties.address}" target="_blank" rel="noopener noreferrer" class="pharmacy__address">
                             ${data[i].properties.address}
                         </a>
+                    
+                        <div class="pharmacy__note">
+                            <p>${data[i].properties.note}</p>
+                        </div>
                     </div>
                     
                     <div class="mask__container">
                         <p class="mask__adult">成人口罩 ${data[i].properties.mask_adult} </p>
                         <p class="mask__child">孩童口罩 ${data[i].properties.mask_child} </p>
-                    </div>`
-                )
+                    </div>
+                `)
             );
         }
         maskMap.addLayer(markers);
     }
 }
 
-{/* <a href="https://www.google.com/maps/dir/25.0032999,121.5540404/25.063669,121.521567" class="customPopup__google" target="_blank"></a> */}
+// <a href="https://www.google.com/maps/dir/25.0032999,121.5540404/25.063669,121.521567" class="customPopup__google" target="_blank"></a>
 
 // initialize the map on the "map" div with a given center and zoom
 // var map = L.map('map', {
