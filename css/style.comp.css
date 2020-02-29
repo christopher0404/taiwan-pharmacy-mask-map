@@ -49,6 +49,9 @@ ul {
   background-color: #4a6272;
   color: #fff; }
 
+img {
+  user-select: none; }
+
 html {
   font-family: 'Maven Pro', 'Noto Sans TC', sans-serif;
   font-size: 62.5%; }
