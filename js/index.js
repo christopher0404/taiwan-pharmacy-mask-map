@@ -145,6 +145,7 @@ window.onload = function() {
                     
                         <div class="pharmacy__note">
                             <p>${data[i].properties.note}</p>
+                            <p>${data[i].properties.custom_note}</p>
                         </div>
                     </div>
                     
