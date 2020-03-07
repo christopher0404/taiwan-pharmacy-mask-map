@@ -65,7 +65,7 @@ window.onload = function() {
 
     // L.tileLayer('https://maps.omniscale.net/v2/private-johnny-chu-9fee754f/style.grayscale/map').addTo(maskMap);
 
-    var host = 'https://maps.omniscale.net/v2/mask-map-8b9d9826/style.grayscale/{z}/{x}/{y}.png';
+    var host = 'https://maps.omniscale.net/v2/omniscale-f1c579ee/style.grayscale/{z}/{x}/{y}.png';
 
     var attribution = '&copy; 2020 &middot; <a href="https://maps.omniscale.com/">Omniscale</a> ' + '&middot; Map data: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
