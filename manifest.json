@@ -1,0 +1,22 @@
+{
+	"short_name": "口罩地圖",
+	"name": "Taiwan Pharmacy Mask Map",
+	"description": "A map displays pharmacies in Taiwan selling surgical masks",
+	"icons": [
+		{
+			"src": "./favicon/android-chrome-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./favicon/android-chrome-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "https://christopher0404.github.io/taiwan-pharmacy-mask-map",
+	"background_color": "#ffffff",
+	"display": "fullscreen",
+	"scope": "/",
+	"theme_color": "#4a6272"
+}

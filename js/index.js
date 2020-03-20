@@ -9,7 +9,7 @@ window.onload = function() {
     // L.mapquest.key = 'xbC1ee3904qPCSmJzBKZ0TuA39aBKbed';
 
     var maskMap = L.map('map', {
-        // center: [25.052362, 121.520685],
+        // center: [25.0169639, 121.226186],
         // layers: MQ.mapLayer(),
         // layers: L.mapquest.tileLayer('map'),
         zoom: 16
